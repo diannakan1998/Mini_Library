@@ -1,0 +1,74 @@
+html
+
+    head
+        title Available Books
+
+        link(rel="icon" type="image/png" href="images/bookfavicon.png")
+
+        link(rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css")
+        script(src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js")
+
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    body
+
+        nav(class="navbar navbar-dark bg-dark")
+            a(class="navbar-brand" href="/home") Home
+            a(class="navbar-brand" href="/history") Account History
+            a(class="navbar-brand" href="/logout") Logout
+
+        div(class='jumbotron jumbotron-fluid')
+            div(class='container')
+                h1(class='display-4') Available Books
+                p(class="lead" style="display:inline") Location: &nbsp;
+                p(class="lead" style="display:inline")= lattitude
+                p(class="lead" style="display:inline") ,&nbsp;
+                p(class="lead" style="display:inline")= longitude
+
+        div(class='container')
+            div(class="row" style="margin-bottom: 2rem;")
+                div(class='col')
+                    div(class='list-group')
+                        each book in books
+                            a(class='list-group-item list-group-item-action')
+                                div(class='d-flex w-100 justify-content-between')
+                                    .h5(class='mb-1')= book.Title
+                                .p(class='mb-1')= book.NAME
+                                .p(class='mb-1')= book.Rating + "/5"
+
+            div(class="row")
+                div(class='col' style="margin-bottom: 4rem;")
+                    h1 Library Location
+                    div(id="map" class="map")
+                    script(type="text/javascript").
+
+                        var baseMapLayer = new ol.layer.Tile({
+                            source: new ol.source.OSM()
+                        });
+                        var map = new ol.Map({
+                            target: 'map',
+                            layers: [ baseMapLayer],
+                            view: new ol.View({
+                                center: ol.proj.fromLonLat([#{longitude},#{lattitude}]), 
+                                zoom: 15 //Initial Zoom Level
+                                })
+                        });
+
+                        //Adding a marker on the map
+                        var marker = new ol.Feature({
+                            geometry: new ol.geom.Point(
+                                ol.proj.fromLonLat([#{longitude},#{lattitude}])
+                            ),
+                        });
+
+                        var vectorSource = new ol.source.Vector({
+                            features: [marker]
+                        });
+                        var markerVectorLayer = new ol.layer.Vector({
+                            source: vectorSource,
+                        });
+                        map.addLayer(markerVectorLayer);
+            

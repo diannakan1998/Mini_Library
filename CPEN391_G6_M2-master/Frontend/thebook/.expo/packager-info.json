@@ -1,0 +1,10 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 1761,
+  "expoServerNgrokUrl": "https://aa-tvi.zengxueqi.thebook.exp.direct",
+  "packagerNgrokUrl": "https://packager.aa-tvi.zengxueqi.thebook.exp.direct",
+  "ngrokPid": 1788,
+  "webpackServerPort": null
+}

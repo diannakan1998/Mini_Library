@@ -1,0 +1,63 @@
+
+html
+
+    head
+
+        title Login
+
+        link(rel="icon" type="image/png" href="images/bookfavicon.png")
+
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    body
+
+        div(class="jumbotron jumbotron-fluid")
+            div(class="container")
+                h1(class="display-4") Take a Book, Leave a Book
+                p(class="lead") Please Login below
+
+
+        div(class="container")
+            div(class="row")
+                div(class="col")
+
+                    form(id="loginform" action="/userLogin" method="POST")
+
+                        div(class="form-group")
+                            label(for="inputPhoneNumberLogin") Phone Number
+                            input(type="tel" class="form-control" id="inputPhoneNumberLogin" name="inputPhoneNumberLogin" placeholder="Enter phone number")
+
+                        div(class="form-group")
+                            label(for="inputPasswordLogin") Password
+                            input(type="password" class="form-control" id="inputPasswordLogin" name="inputPasswordLogin" placeholder="Password")
+
+                        button(type="submit" class="btn btn-block btn-primary" style="background-color: #efa01a; border-color: #efa01a;") Log In
+
+                div(class="col")
+
+                    div(class="card" style="width: 18rem; float: right;")
+                        div(class="card-body")
+                            h5(class="card-title") Sign Up
+                            p(class="card-text") Please sign up for a new account if you do not already have one
+
+                        div(class="col")
+
+                            form(id="signUpform" action="/userSignUp" method="POST")
+
+                                div(class="form-group")
+                                    label(for="inputPhoneNumberSignUp") Phone Number
+                                    input(type="tel" class="form-control" id="inputPhoneNumberSignUp" name="inputPhoneNumberSignUp" placeholder="Enter phone number")
+
+                                div(class="form-group")
+                                    label(for="inputPasswordSignUp") Password
+                                    input(type="password" class="form-control" id="inputPasswordSignUp" name="inputPasswordSignUp" placeholder="Password")
+
+                                button(type="submit" class="btn btn-block btn-primary" style="background-color: #efa01a; border-color: #efa01a;") Sign Up
+
+
+
+

@@ -1,0 +1,55 @@
+
+html
+
+    head
+        title Account History
+
+        link(rel="icon" type="image/png" href="images/bookfavicon.png")
+
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    body
+
+        nav(class="navbar navbar-dark bg-dark")
+            a(class="navbar-brand" href="/home") Home
+            a(class="navbar-brand" href="/history") Account History
+            a(class="navbar-brand" href="/logout") Logout
+
+        div(class='jumbotron jumbotron-fluid')
+            div(class='container')
+                h1(class='display-4') Account History
+                p(class="lead") All of your current rentals and past transactions are listed below
+
+        div(class='container' style="margin-bottom: 4rem;")
+            div(class='row')
+                div(class='col')
+                    h1 Current Rentals:
+                    div(class='list-group')
+                        each book in checkedBooks
+                            a(class='list-group-item list-group-item-action')
+                                div(class='d-flex w-100 justify-content-between')
+                                    .h5(class='mb-1')= book.Title
+                                .p(class='mb-1')= book.Author
+                                .p(class='mb-1')= "Takeout Date: " + book.Takeout_Date
+
+        div(class='container' style="margin-bottom: 4rem;")
+            div(class='row')
+                div(class='col')
+                    h1 Past Transactions:
+                    div(class='list-group')
+                        each transaction in transactions
+                            a(class='list-group-item list-group-item-action')
+                                div(class='d-flex w-100 justify-content-between')
+                                    .h5(class='mb-1')= transaction.Title
+                                .p(class='mb-1')= transaction.Author
+                                .p(class='mb-1')= "Takeout Date: " + transaction.Takeout_Date
+                                .p(class='mb-1')= "Returned On: " + transaction.Return_Date
+            
+
+
+
+

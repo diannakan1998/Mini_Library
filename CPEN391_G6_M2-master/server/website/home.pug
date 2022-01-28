@@ -1,0 +1,41 @@
+
+html
+
+    head
+        title Home
+        style
+            include css/home.css
+
+        link(rel="icon" type="image/png" href="images/bookfavicon.png")
+
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous")
+
+    body
+
+        nav(class="navbar navbar-dark bg-dark")
+            a(class="navbar-brand" href="/home") Home
+            a(class="navbar-brand" href="/history") Account History
+            a(class="navbar-brand" href="/logout") Logout
+
+
+        div(class="jumbotron jumbotron-fluid")
+            div(class="container")
+                h1(class="display-4") Take a Book, Leave a Book
+                p(class="lead") Select a location below to view its available books
+
+        div(class="container-fluid")
+            div(class="list-group")
+                a(href="/available?libraryID=0" class="list-group-item list-group-item-action") Location 0
+                a(href="/available?libraryID=1" class="list-group-item list-group-item-action") Location 1
+                a(href="/available?libraryID=2" class="list-group-item list-group-item-action") Location 2
+                a(href="/available?libraryID=3" class="list-group-item list-group-item-action") Location 3
+                a(href="/available?libraryID=4" class="list-group-item list-group-item-action") Location 4
+
+        div(class="container-fluid")
+            img(src="images/bookStack.jpg" alt='books')
+
+

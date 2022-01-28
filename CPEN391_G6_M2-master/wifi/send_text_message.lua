@@ -30,8 +30,8 @@ tmr.delay(1000000) -- wait 1,000,000 us = 1 second
 
 -- The following 2 pieces of information are related to your Twilio account the one you made in Exercise 1.9
 -- change appropriately
-TWILIO_ACCOUNT_SID = "AC9ed0efb58f45bb99657b3811f67953cd"
-TWILIO_TOKEN =       "c77085df714bfc0d91ad67f67e84dc3f"
+TWILIO_ACCOUNT_SID = "---"
+TWILIO_TOKEN =       "---"
 
 -- Unfortunately, the Wi-FI dongle can only make unsecured HTTP requests, but Twilio requires 
 -- secured HTTPS requests, so we will use a relay website to convert HTTP requests into HTTPS requests

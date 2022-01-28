@@ -6,7 +6,7 @@ It also contains a mobile application in react native, node js, and mySql for bo
 
 
 Contributers:  
-diannakan1998. 
+diannakan1998   
 zengxueqi   
 ConnorShann   
 arjansandhu  
